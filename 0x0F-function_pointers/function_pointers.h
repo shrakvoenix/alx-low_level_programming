@@ -1,12 +1,12 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef FUNCTION_POINTERS_H
+#define FUNCTION_POINTERS_H
 
-char *create_array(unsigned int size, char c);
+#include <stddef.h>
+#include <stdlib.h>
+
+void print_name(char *name, void (*f)(char *));
 int _putchar(char c);
-char *_strdup(char *str);
-char *str_concat(char *s1, char *s2);
-int **alloc_grid(int width, int height);
-void free_grid(int **grid, int height);
-char *argstostr(int ac, char **av);
+void array_iterator(int *array, size_t size, void (*action)(int));
+int int_index(int *array, int size, int (*cmp)(int));
 
 #endif
